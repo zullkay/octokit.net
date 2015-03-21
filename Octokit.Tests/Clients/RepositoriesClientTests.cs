@@ -365,7 +365,7 @@ namespace Octokit.Tests.Clients
                 connection.Received()
                     .GetAll<Repository>(
                         Arg.Is<Uri>(u => u.ToString() == "users/username/repos"),
-                        ApiOptions.None);
+                        Args.ApiOptions);
             }
 
             [Fact]
@@ -413,7 +413,7 @@ namespace Octokit.Tests.Clients
                 connection.Received()
                     .GetAll<Branch>(
                         Arg.Is<Uri>(u => u.ToString() == "repos/owner/name/branches"),
-                        ApiOptions.None);
+                        Args.ApiOptions);
             }
 
             [Fact]
@@ -442,7 +442,7 @@ namespace Octokit.Tests.Clients
                     .GetAll<RepositoryContributor>(
                         Arg.Is<Uri>(u => u.ToString() == "repos/owner/name/contributors"),
                         Arg.Any<IDictionary<string, string>>(),
-                        ApiOptions.None);
+                        Args.ApiOptions);
             }
 
             [Fact]
@@ -522,7 +522,7 @@ namespace Octokit.Tests.Clients
                 connection.Received()
                     .GetAll<RepositoryTag>(
                         Arg.Is<Uri>(u => u.ToString() == "repos/owner/name/tags"),
-                        ApiOptions.None);
+                        Args.ApiOptions);
             }
 
             [Fact]
@@ -698,7 +698,7 @@ namespace Octokit.Tests.Clients
                 connection.Received()
                     .GetAll<GitHubCommit>(Arg.Is<Uri>(u => u.ToString() == "repos/owner/name/commits"),
                     Arg.Any<Dictionary<string, string>>(),
-                    ApiOptions.None);
+                    Args.ApiOptions);
             }
         }
     }

@@ -186,7 +186,7 @@ namespace Octokit
         /// <returns>A <see cref="IReadOnlyPagedCollection{Repository}"/> of <see cref="Repository"/>.</returns>
         public Task<IReadOnlyList<Repository>> GetAllPublic()
         {
-            return GetAllPublic(ApiOptions.None);
+            return GetAllPublic(ApiOptions.None());
         }
 
         /// <summary>
@@ -249,7 +249,7 @@ namespace Octokit
         /// <returns>A <see cref="IReadOnlyPagedCollection{Repository}"/> of <see cref="Repository"/>.</returns>
         public Task<IReadOnlyList<Repository>> GetAllForCurrent(RepositoryRequest request)
         {
-            return GetAllForCurrent(request, ApiOptions.None);
+            return GetAllForCurrent(request, ApiOptions.None());
         }
 
         /// <summary>
@@ -282,7 +282,7 @@ namespace Octokit
         /// <returns>A <see cref="IReadOnlyPagedCollection{Repository}"/> of <see cref="Repository"/>.</returns>
         public Task<IReadOnlyList<Repository>> GetAllForUser(string login)
         {
-            return GetAllForUser(login, ApiOptions.None);
+            return GetAllForUser(login, ApiOptions.None());
         }
 
         /// <summary>
@@ -313,7 +313,7 @@ namespace Octokit
         /// <returns>A <see cref="IReadOnlyPagedCollection{Repository}"/> of <see cref="Repository"/>.</returns>
         public Task<IReadOnlyList<Repository>> GetAllForOrg(string organization)
         {
-            return GetAllForOrg(organization, ApiOptions.None);
+            return GetAllForOrg(organization, ApiOptions.None());
         }
 
         /// <summary>
@@ -427,7 +427,7 @@ namespace Octokit
         /// <returns>All <see cref="T:Octokit.Branch"/>es of the repository</returns>
         public Task<IReadOnlyList<Branch>> GetAllBranches(string owner, string name)
         {
-            return GetAllBranches(owner, name, ApiOptions.None);
+            return GetAllBranches(owner, name, ApiOptions.None());
         }
 
         /// <summary>
@@ -492,7 +492,7 @@ namespace Octokit
         /// <returns>All contributors of the repository.</returns>
         public Task<IReadOnlyList<RepositoryContributor>> GetAllContributors(string owner, string name, bool includeAnonymous)
         {
-            return GetAllContributors(owner, name, includeAnonymous, ApiOptions.None);
+            return GetAllContributors(owner, name, includeAnonymous, ApiOptions.None());
         }
 
         /// <summary>
@@ -554,7 +554,7 @@ namespace Octokit
         /// <returns>All <see cref="T:Octokit.Team"/>s associated with the repository</returns>
         public Task<IReadOnlyList<Team>> GetAllTeams(string owner, string name)
         {
-            return GetAllTeams(owner, name, ApiOptions.None);
+            return GetAllTeams(owner, name, ApiOptions.None());
         }
 
         /// <summary>
@@ -587,7 +587,7 @@ namespace Octokit
         /// <returns>All of the repositorys tags.</returns>
         public Task<IReadOnlyList<RepositoryTag>> GetAllTags(string owner, string name)
         {
-            return GetAllTags(owner, name, ApiOptions.None);
+            return GetAllTags(owner, name, ApiOptions.None());
         }
 
         /// <summary>
