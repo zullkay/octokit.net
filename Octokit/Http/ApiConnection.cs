@@ -460,7 +460,7 @@ namespace Octokit
 
             var connection = Connection;
 
-            var response = await connection.Get<List<TU>>(uri, parameters, accepts).ConfigureAwait(false);
+            var response = await connection.Get<List<TU>>(uri, parameters, accepts, options.CancellationToken).ConfigureAwait(false);
             return new ReadOnlyPagedCollection<TU>(
                 response,
                 nextPageUri =>
@@ -483,7 +483,7 @@ namespace Octokit
                         }
                     }
 
-                    return connection.Get<List<TU>>(nextPageUri, parameters, accepts);
+                    return connection.Get<List<TU>>(nextPageUri, parameters, accepts, options.CancellationToken);
                 });
         }
 

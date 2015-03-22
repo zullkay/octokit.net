@@ -1,12 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 
 namespace Octokit
 {
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public class ApiOptions
     {
+        public ApiOptions()
+        {
+            CancellationToken = CancellationToken.None;
+        }
+
         internal static ApiOptions None()
         {
             return new ApiOptions();
@@ -16,6 +22,7 @@ namespace Octokit
         public int? PageCount { get; set; }
         public int? PageSize { get; set; }
         public string Accepts { get; set; }
+        public CancellationToken CancellationToken { get; set; }
 
         internal string DebuggerDisplay
         {
